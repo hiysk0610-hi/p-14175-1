@@ -1,3 +1,3 @@
 export default function Page() {
-    return <div>posts</div>
+    return <div>글목록</div>
 }
