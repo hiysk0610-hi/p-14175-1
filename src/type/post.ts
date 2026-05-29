@@ -1,9 +1,9 @@
-export type PostDto = {
+export interface PostDto  {
   id: number;
   title: string;
 };
 
-export type PostWithContentDto = {
+export interface PostWithContentDto  {
   id: number;
   title: string;
   content: string;
