@@ -1,7 +1,8 @@
-export type PostWithContentDto = {
-  id: number;
+export type PostDto = {
+    id: number;
   title: string;
-  content: string
 };
 
-export type PostDto = Omit<PostWithContentDto, "content">;
+export type PostWithContentDto = PostDto & {
+  content: string;
+};
