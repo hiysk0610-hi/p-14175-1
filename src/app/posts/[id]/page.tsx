@@ -1,14 +1,14 @@
 "use client";
 
-import type { PostDto } from "@/type/post";
+import type { PostWithContentDto } from "@/type/post";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const { id } = useParams<{ id: string }>();
  
-  const [post, setPost] = useState<PostDto | null>(null);
-
+  const [post, setPost] = useState<PostWithContentDto | null>(null);
+  
   useEffect(() => {
     fetch(`http://localhost:8080/api/v1/posts/${id}`)
       .then((res) => res.json())
