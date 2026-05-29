@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
-export default function Page() {
+export default function Page({ params }: { params: Promise<{ id: number }> }) {
+  const { id } = use(params);
   const [post, setPost] = useState<{
     id: number;
     title: string;
@@ -10,8 +11,8 @@ export default function Page() {
   } | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/posts/1")
-      .then((res) => res.json())
+    fetch(`http://localhost:8080/api/v1/posts/${id}`)
+          .then((res) => res.json())
       .then(setPost);
   }, []);
 
